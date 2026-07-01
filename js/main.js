@@ -113,3 +113,141 @@ document.querySelector(".hero-image").style.transform=
 });
 
 });
+/* ==========================================
+   HRYET PREMIUM EFFECTS V2
+========================================== */
+
+/* Cursor Glow */
+
+const glow = document.createElement("div");
+
+glow.classList.add("cursor-glow");
+
+document.body.appendChild(glow);
+
+window.addEventListener("mousemove",(e)=>{
+
+glow.style.left=e.clientX+"px";
+
+glow.style.top=e.clientY+"px";
+
+});
+
+
+/* Floating Background */
+
+for(let i=0;i<18;i++){
+
+const particle=document.createElement("span");
+
+particle.classList.add("particle");
+
+particle.style.left=Math.random()*100+"vw";
+
+particle.style.animationDuration=
+
+5+Math.random()*10+"s";
+
+particle.style.animationDelay=
+
+Math.random()*6+"s";
+
+document.body.appendChild(particle);
+
+}
+
+
+/* Hero Mouse Effect */
+
+const heroCard=document.querySelector(".hero-card");
+
+document.addEventListener("mousemove",(e)=>{
+
+const x=(window.innerWidth/2-e.pageX)/35;
+
+const y=(window.innerHeight/2-e.pageY)/35;
+
+heroCard.style.transform=
+
+`rotateY(${-x}deg)
+rotateX(${y}deg)`;
+
+});
+
+
+/* Button Ripple */
+
+document.querySelectorAll(".btn-primary").forEach(button=>{
+
+button.addEventListener("click",(e)=>{
+
+const circle=document.createElement("span");
+
+const size=Math.max(
+
+button.clientWidth,
+
+button.clientHeight
+
+);
+
+circle.style.width=size+"px";
+
+circle.style.height=size+"px";
+
+circle.style.left=
+
+e.offsetX-size/2+"px";
+
+circle.style.top=
+
+e.offsetY-size/2+"px";
+
+circle.classList.add("ripple");
+
+button.appendChild(circle);
+
+setTimeout(()=>{
+
+circle.remove();
+
+},700);
+
+});
+
+});
+
+
+/* Smooth Scroll */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.querySelector(
+
+this.getAttribute("href")
+
+).scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
+
+});
+
+
+/* Loading Animation */
+
+window.addEventListener("load",()=>{
+
+document.body.classList.add("loaded");
+
+});
+
+
+console.log("💜 HRYET Premium Loaded");
