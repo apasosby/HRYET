@@ -1,1 +1,1 @@
-Hh
+console.log("HRYET iniciado correctamente 🚀");
