@@ -1,1 +1,142 @@
-J
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crear Cuenta | HRYET</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/register.css">
+
+</head>
+
+<body>
+
+<div class="register-container">
+
+<div class="register-left">
+
+<a href="index.html" class="logo">
+
+HR<span>YET</span>
+
+</a>
+
+<h1>
+
+Únete a HRYET
+
+</h1>
+
+<p>
+
+Crea tu identidad digital y comienza a personalizar tus prendas con un código QR exclusivo.
+
+</p>
+
+<img src="assets/images/register.png"
+
+alt="Registro">
+
+</div>
+
+<div class="register-right">
+
+<form id="registerForm">
+
+<h2>
+
+Crear Cuenta
+
+</h2>
+
+<div class="input-group">
+
+<label>Nombre completo</label>
+
+<input
+type="text"
+id="name"
+placeholder="Tu nombre"
+required>
+
+</div>
+
+<div class="input-group">
+
+<label>Correo electrónico</label>
+
+<input
+type="email"
+id="email"
+placeholder="correo@ejemplo.com"
+required>
+
+</div>
+
+<div class="input-group">
+
+<label>Contraseña</label>
+
+<input
+type="password"
+id="password"
+placeholder="••••••••"
+required>
+
+</div>
+
+<div class="input-group">
+
+<label>Confirmar contraseña</label>
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="••••••••"
+required>
+
+</div>
+
+<button
+type="submit"
+class="btn-register">
+
+Crear Cuenta
+
+</button>
+
+<p class="login-link">
+
+¿Ya tienes una cuenta?
+
+<a href="login.html">
+
+Inicia sesión
+
+</a>
+
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+<script src="js/firebase.js"></script>
+
+<script src="js/auth.js"></script>
+
+</body>
+
+</html>
