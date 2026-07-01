@@ -138,5 +138,39 @@ Inicia sesión
 <script src="js/auth.js"></script>
 
 </body>
+<h1>Crear cuenta</h1>
+
+<form id="registerForm">
+
+  <input
+    type="text"
+    id="name"
+    placeholder="Nombre completo"
+    required
+  >
+
+  <input
+    type="email"
+    id="email"
+    placeholder="Correo electrónico"
+    required
+  >
+
+  <input
+    type="password"
+    id="password"
+    placeholder="Contraseña"
+    required
+  >
+
+  <button type="submit">
+    Crear cuenta
+  </button>
+
+</form>
+
+<p id="message"></p>
+
+<script type="module" src="js/register.js"></script>
 
 </html>
