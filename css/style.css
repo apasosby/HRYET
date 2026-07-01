@@ -1,169 +1,31 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+/*
+=========================================
+HRYET
+Main JavaScript
+Version 1.0
+=========================================
+*/
 
-html{
-    scroll-behavior:smooth;
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-body{
-    background:#050505;
-    color:#ffffff;
-    font-family:Arial,Helvetica,sans-serif;
-}
+    console.log("🚀 HRYET cargado correctamente");
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+    const navbar = document.querySelector(".navbar");
 
-ul{
-    list-style:none;
-}
+    window.addEventListener("scroll", () => {
 
-img{
-    max-width:100%;
-    display:block;
-}
+        if (window.scrollY > 50) {
 
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+            navbar.style.background = "rgba(0,0,0,.90)";
+            navbar.style.boxShadow = "0 10px 30px rgba(0,0,0,.40)";
 
-    padding:20px 8%;
+        } else {
 
-    position:fixed;
-    width:100%;
-    top:0;
+            navbar.style.background = "rgba(0,0,0,.75)";
+            navbar.style.boxShadow = "none";
 
-    background:rgba(0,0,0,.75);
-    backdrop-filter:blur(12px);
+        }
 
-    z-index:1000;
-}
+    });
 
-.logo a{
-    font-size:30px;
-    font-weight:800;
-    color:#9b5cff;
-    letter-spacing:3px;
-}
-
-.nav-links{
-    display:flex;
-    gap:35px;
-}
-
-.nav-links a{
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:#9b5cff;
-}
-
-.nav-buttons{
-    display:flex;
-    gap:15px;
-}
-
-.btn-primary{
-
-    background:#9b5cff;
-    color:white;
-
-    padding:12px 24px;
-
-    border-radius:12px;
-
-    transition:.3s;
-}
-
-.btn-primary:hover{
-
-    background:#7f34ff;
-
-}
-
-.btn-outline{
-
-    border:2px solid #9b5cff;
-
-    padding:12px 24px;
-
-    border-radius:12px;
-
-    transition:.3s;
-
-}
-
-.btn-outline:hover{
-
-    background:#9b5cff;
-
-}
-
-#hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:150px 8% 80px;
-
-    gap:60px;
-
-}
-
-.hero-content{
-
-    flex:1;
-
-}
-
-.hero-content h1{
-
-    font-size:70px;
-
-    line-height:1.1;
-
-    margin-bottom:25px;
-
-}
-
-.hero-content p{
-
-    font-size:22px;
-
-    color:#cfcfcf;
-
-    margin-bottom:35px;
-
-    max-width:650px;
-
-}
-
-.hero-buttons{
-
-    display:flex;
-
-    gap:20px;
-
-}
-
-.hero-image{
-
-    flex:1;
-
-    display:flex;
-
-    justify-content:center;
-
-}
+});
