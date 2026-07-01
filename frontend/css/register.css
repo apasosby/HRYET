@@ -1,142 +1,289 @@
-<!DOCTYPE html>
-<html lang="es">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
-<head>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
 
-<meta charset="UTF-8">
+body{
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+min-height:100vh;
 
-<title>Crear Cuenta | HRYET</title>
+display:flex;
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+justify-content:center;
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+align-items:center;
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+background:
+radial-gradient(circle at top,#8a2eff22 0%,transparent 35%),
+radial-gradient(circle at bottom,#8a2eff18 0%,transparent 40%),
+#050505;
 
-<link rel="stylesheet" href="css/register.css">
+color:#fff;
 
-</head>
+overflow:hidden;
 
-<body>
+}
 
-<div class="register-container">
+.register-container{
 
-<div class="register-left">
+width:1200px;
 
-<a href="index.html" class="logo">
+max-width:95%;
 
-HR<span>YET</span>
+display:grid;
 
-</a>
+grid-template-columns:1fr 1fr;
 
-<h1>
+background:rgba(255,255,255,.05);
 
-Únete a HRYET
+border:1px solid rgba(255,255,255,.08);
 
-</h1>
+backdrop-filter:blur(25px);
 
-<p>
+border-radius:35px;
 
-Crea tu identidad digital y comienza a personalizar tus prendas con un código QR exclusivo.
+overflow:hidden;
 
-</p>
+box-shadow:0 0 60px rgba(138,46,255,.25);
 
-<img src="assets/images/register.png"
+}
 
-alt="Registro">
+.register-left{
 
-</div>
+padding:70px;
 
-<div class="register-right">
+display:flex;
 
-<form id="registerForm">
+flex-direction:column;
 
-<h2>
+justify-content:center;
 
-Crear Cuenta
+}
 
-</h2>
+.logo{
 
-<div class="input-group">
+font-size:40px;
 
-<label>Nombre completo</label>
+font-weight:900;
 
-<input
-type="text"
-id="name"
-placeholder="Tu nombre"
-required>
+text-decoration:none;
 
-</div>
+color:#fff;
 
-<div class="input-group">
+margin-bottom:35px;
 
-<label>Correo electrónico</label>
+}
 
-<input
-type="email"
-id="email"
-placeholder="correo@ejemplo.com"
-required>
+.logo span{
 
-</div>
+color:#8a2eff;
 
-<div class="input-group">
+}
 
-<label>Contraseña</label>
+.register-left h1{
 
-<input
-type="password"
-id="password"
-placeholder="••••••••"
-required>
+font-size:58px;
 
-</div>
+margin-bottom:20px;
 
-<div class="input-group">
+line-height:1.1;
 
-<label>Confirmar contraseña</label>
+}
 
-<input
-type="password"
-id="confirmPassword"
-placeholder="••••••••"
-required>
+.register-left p{
 
-</div>
+font-size:18px;
 
-<button
-type="submit"
-class="btn-register">
+line-height:1.8;
 
-Crear Cuenta
+color:#cfcfcf;
 
-</button>
+margin-bottom:40px;
 
-<p class="login-link">
+}
 
-¿Ya tienes una cuenta?
+.register-left img{
 
-<a href="login.html">
+max-width:430px;
 
-Inicia sesión
+margin:auto;
 
-</a>
+animation:float 6s ease-in-out infinite;
 
-</p>
+}
 
-</form>
+.register-right{
 
-</div>
+display:flex;
 
-</div>
+justify-content:center;
 
-<script src="js/firebase.js"></script>
+align-items:center;
 
-<script src="js/auth.js"></script>
+padding:70px;
 
-</body>
+}
 
-</html>
+form{
+
+width:100%;
+
+max-width:430px;
+
+}
+
+form h2{
+
+font-size:40px;
+
+margin-bottom:35px;
+
+}
+
+.input-group{
+
+margin-bottom:22px;
+
+}
+
+.input-group label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-weight:600;
+
+}
+
+.input-group input{
+
+width:100%;
+
+padding:18px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:#fff;
+
+outline:none;
+
+font-size:16px;
+
+transition:.35s;
+
+}
+
+.input-group input:focus{
+
+border-color:#8a2eff;
+
+box-shadow:0 0 25px rgba(138,46,255,.35);
+
+}
+
+.btn-register{
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+border-radius:18px;
+
+background:linear-gradient(90deg,#8a2eff,#b84dff);
+
+color:#fff;
+
+font-size:17px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 0 30px rgba(138,46,255,.35);
+
+}
+
+.btn-register:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 0 45px rgba(138,46,255,.6);
+
+}
+
+.login-link{
+
+margin-top:30px;
+
+text-align:center;
+
+color:#bfbfbf;
+
+}
+
+.login-link a{
+
+color:#8a2eff;
+
+text-decoration:none;
+
+font-weight:700;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@media(max-width:900px){
+
+.register-container{
+
+grid-template-columns:1fr;
+
+}
+
+.register-left{
+
+display:none;
+
+}
+
+.register-right{
+
+padding:45px 30px;
+
+}
+
+}
