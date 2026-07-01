@@ -1,66 +1,35 @@
-import { auth, db } from "./firebase.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 
 import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
-import {
-  doc,
-  setDoc
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+const firebaseConfig = {
 
+apiKey:"TU_API_KEY",
 
-// REGISTRO
-export async function register(name, email, password) {
+authDomain:"TU_AUTH_DOMAIN",
 
-  const userCredential = await createUserWithEmailAndPassword(
-    auth,
-    email,
-    password
-  );
+projectId:"TU_PROJECT_ID",
 
-  const user = userCredential.user;
+storageBucket:"TU_STORAGE_BUCKET",
 
-  await setDoc(doc(db, "users", user.uid), {
+messagingSenderId:"TU_SENDER_ID",
 
-    uid: user.uid,
+appId:"TU_APP_ID"
 
-    nombre: name,
+};
 
-    email: email,
+const app = initializeApp(firebaseConfig);
 
-    qr: "",
+export const auth = getAuth(app);
 
-    likes: 0,
+export {
 
-    scans: 0,
+createUserWithEmailAndPassword,
 
-    createdAt: new Date()
+signInWithEmailAndPassword
 
-  });
-
-  return user;
-
-}
-
-
-// LOGIN
-export async function login(email, password) {
-
-  return await signInWithEmailAndPassword(
-    auth,
-    email,
-    password
-  );
-
-}
-
-
-// CERRAR SESIÓN
-export async function logout() {
-
-  await signOut(auth);
-
-}
+};
