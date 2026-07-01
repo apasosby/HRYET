@@ -1,29 +1,39 @@
-// =========================
+// ==========================
 // HRYET QR SYSTEM
-// =========================
+// ==========================
 
-// ID único del usuario
-const userId = "HRYET-0001";
+// Obtener el ID desde la URL
+const params = new URLSearchParams(window.location.search);
 
-// URL del perfil
+const userId = params.get("id") || "HRYET-0001";
+
+// Construir la URL del perfil
 const profileURL =
 window.location.origin +
-"/frontend/profile.html?id=" +
+window.location.pathname +
+"?id=" +
 userId;
 
-// Mostrar temporalmente el enlace
+// Contenedor del QR
 const qrContainer = document.getElementById("qr");
 
-if(qrContainer){
+if (qrContainer) {
 
-qrContainer.innerHTML = `
-<div class="qr-box">
+    qrContainer.innerHTML = `
+        <h3>Código QR Personal</h3>
 
-<h3>Tu Código QR</h3>
+        <div id="qrcode"></div>
 
-<p>${profileURL}</p>
+        <p><strong>ID:</strong> ${userId}</p>
+    `;
 
-</div>
-`;
+    new QRCode(document.getElementById("qrcode"), {
+        text: profileURL,
+        width: 220,
+        height: 220,
+        colorDark: "#8b5cf6",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
 
 }
