@@ -1,291 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+<!DOCTYPE html>
+<html lang="es">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Montserrat',sans-serif;
-}
+<head>
 
-body{
+<meta charset="UTF-8">
 
-min-height:100vh;
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-display:flex;
+<title>Iniciar Sesión | HRYET</title>
 
-justify-content:center;
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-align-items:center;
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-background:
-radial-gradient(circle at top,#8a2eff22 0%,transparent 35%),
-radial-gradient(circle at bottom,#8a2eff18 0%,transparent 40%),
-#050505;
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-color:#fff;
+<link rel="stylesheet" href="css/login.css">
 
-overflow:hidden;
+</head>
 
-}
+<body>
 
-.login-container{
+<div class="login-container">
 
-width:1200px;
+<div class="login-left">
 
-max-width:95%;
+<a href="index.html" class="logo">
 
-display:grid;
+HR<span>YET</span>
 
-grid-template-columns:1fr 1fr;
+</a>
 
-background:rgba(255,255,255,.05);
+<h1>
 
-border:1px solid rgba(255,255,255,.08);
+Bienvenido de nuevo
 
-backdrop-filter:blur(25px);
+</h1>
 
-border-radius:35px;
+<p>
 
-overflow:hidden;
+Inicia sesión para administrar tu identidad digital, tus pedidos y tu perfil QR.
 
-box-shadow:0 0 60px rgba(138,46,255,.25);
+</p>
 
-}
+<img src="assets/images/login.png"
 
-.login-left{
+alt="Login">
 
-padding:70px;
+</div>
 
-display:flex;
+<div class="login-right">
 
-flex-direction:column;
+<form id="loginForm">
 
-justify-content:center;
+<h2>
 
-}
+Iniciar Sesión
 
-.logo{
+</h2>
 
-font-size:40px;
+<div class="input-group">
 
-font-weight:900;
+<label>
 
-color:#fff;
+Correo electrónico
 
-text-decoration:none;
+</label>
 
-margin-bottom:40px;
+<input
 
-}
+type="email"
 
-.logo span{
+id="email"
 
-color:#8a2eff;
+placeholder="correo@ejemplo.com"
 
-}
+required>
 
-.login-left h1{
+</div>
 
-font-size:58px;
+<div class="input-group">
 
-margin-bottom:25px;
+<label>
 
-line-height:1.1;
+Contraseña
 
-}
+</label>
 
-.login-left p{
+<input
 
-font-size:18px;
+type="password"
 
-line-height:1.8;
+id="password"
 
-color:#cfcfcf;
+placeholder="••••••••"
 
-margin-bottom:40px;
+required>
 
-}
+</div>
 
-.login-left img{
+<button
 
-max-width:420px;
+type="submit"
 
-width:100%;
+class="btn-login">
 
-margin:auto;
+Entrar
 
-animation:float 6s ease-in-out infinite;
+</button>
 
-}
+<p class="register-link">
 
-.login-right{
+¿No tienes una cuenta?
 
-padding:70px;
+<a href="register.html">
 
-display:flex;
+Crear cuenta
 
-justify-content:center;
+</a>
 
-align-items:center;
+</p>
 
-}
+</form>
 
-form{
+</div>
 
-width:100%;
+</div>
 
-max-width:430px;
+<script src="js/firebase.js"></script>
 
-}
+<script src="js/auth.js"></script>
 
-form h2{
+</body>
 
-font-size:40px;
-
-margin-bottom:35px;
-
-}
-
-.input-group{
-
-margin-bottom:25px;
-
-}
-
-.input-group label{
-
-display:block;
-
-margin-bottom:10px;
-
-font-weight:600;
-
-}
-
-.input-group input{
-
-width:100%;
-
-padding:18px;
-
-border-radius:16px;
-
-background:rgba(255,255,255,.06);
-
-border:1px solid rgba(255,255,255,.08);
-
-color:#fff;
-
-font-size:16px;
-
-outline:none;
-
-transition:.35s;
-
-}
-
-.input-group input:focus{
-
-border-color:#8a2eff;
-
-box-shadow:0 0 25px rgba(138,46,255,.35);
-
-}
-
-.btn-login{
-
-width:100%;
-
-padding:18px;
-
-border:none;
-
-border-radius:18px;
-
-background:linear-gradient(90deg,#8a2eff,#b84dff);
-
-color:white;
-
-font-size:17px;
-
-font-weight:700;
-
-cursor:pointer;
-
-transition:.35s;
-
-box-shadow:0 0 30px rgba(138,46,255,.35);
-
-}
-
-.btn-login:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 0 45px rgba(138,46,255,.6);
-
-}
-
-.register-link{
-
-margin-top:30px;
-
-text-align:center;
-
-color:#bfbfbf;
-
-}
-
-.register-link a{
-
-color:#8a2eff;
-
-text-decoration:none;
-
-font-weight:700;
-
-}
-
-@keyframes float{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-18px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-@media(max-width:900px){
-
-.login-container{
-
-grid-template-columns:1fr;
-
-}
-
-.login-left{
-
-display:none;
-
-}
-
-.login-right{
-
-padding:45px 30px;
-
-}
-
-}
+</html>
