@@ -1,1 +1,35 @@
-𝓡
+/* ===========================
+   HRYET
+   Luxury QR Clothing
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:#ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
+
+section{
+    width:100%;
+    min-height:100vh;
+    padding:100px 8%;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+}
